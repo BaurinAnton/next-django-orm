@@ -1,0 +1,44 @@
+.listDesktop {
+    display: flex;
+    justify-content: space-between;
+
+    .listItem {
+        margin-right: 2rem;
+
+        &:nth-last-of-type(1) {
+            margin-right: 0;
+        }
+    }
+}
+
+.listMobile {
+    position: absolute;
+    right: 1.2rem;
+    top: 5rem;
+    display: flex;
+    flex-direction: column;
+
+    .listItem {
+        margin-bottom: 0.5rem;
+
+        &:nth-last-of-type(1) {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.itemButton {
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition-duration: 100ms;
+
+    &:hover {
+        color: var(--red);
+    }
+
+    &:active {
+        transform: scale(0.95);
+    }
+}
