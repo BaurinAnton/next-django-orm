@@ -1,0 +1,24 @@
+version: '3.9'
+
+services:
+  orm:
+    build:
+      dockerfile: Dockerfile
+      context: ./backend
+    container_name: orm
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./volumes/data:/var/django/data
+    ports:
+      - 8000:8000
+
+  gui_orm:
+    build:
+      dockerfile: Dockerfile
+      context: ./frontend
+    container_name: gui_orm
+    command: yarn dev
+    ports:
+      - 3000:3000
+    depends_on:
+      - backend
